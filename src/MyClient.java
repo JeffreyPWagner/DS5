@@ -13,15 +13,14 @@ public class MyClient{
 
 			Callback callback = new CallbackRemote();
 
-			boolean running = true;
-			while (running) {
+			while (true) {
 				System.out.println("Please enter a command: ");
 				command = scanner.nextLine();
 				result = stub.action(command, callback);
 				if (result.equals("closing connection")) {
 					break;
 				} else {
-					System.out.println("RMI: " + result);
+					System.out.println(result);
 				}
 			}
 			scanner.close();
